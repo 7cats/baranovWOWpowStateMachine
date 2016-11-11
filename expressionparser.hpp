@@ -1,6 +1,8 @@
 #include <string>
 #include <sstream>
 
+#define EXPRPARSEREOF (std::string(1, '\n'))
+
 class ExpressionParser 
 {
     public:
