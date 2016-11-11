@@ -1,4 +1,5 @@
 #include <string>
+#include <sstream>
 
 class ExpressionParser 
 {
@@ -6,11 +7,11 @@ class ExpressionParser
         ExpressionParser();
         ExpressionParser(const std::string &expr);
         
-        ExpressionParser& operator>>(const std::string &expr);
+        ExpressionParser& operator>>(std::string &expr);
         void operator<<(const std::string &expr);
     
     private:
         std::string read(); 
-        std::string expr;
-        int indx;
+        std::string m_expr;
+        int m_indx = 0;
 };
