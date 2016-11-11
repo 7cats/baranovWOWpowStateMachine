@@ -2,10 +2,13 @@
 #include <stack>
 
 #include "astnode.hpp"
+#include "expressionparser.hpp"
 
 typedef long double lld;
 
-enum State {WExpression = 0, WOperation = 1, WOperand = 2};
+enum State {
+    WExpression = 0, WOperation = 1, WOperand = 2
+};
 
 class ASTBuilder
 {
@@ -25,6 +28,7 @@ class ASTBuilder
         void add_function(const std::string &funcName);
         void optimize_tree();
         
+        ExpressionParser m_expParser;
         State m_state = WExpression;
         std::vector<std::string> m_func = {"sin", "cos", "tg"};
         std::stack< std::pair< std::string, int> > m_operationsStack;
