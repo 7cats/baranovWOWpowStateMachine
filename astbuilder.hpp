@@ -3,6 +3,7 @@
 
 #include "astnode.hpp"
 #include "expressionparser.hpp"
+#include "tokenanalyzer.hpp"
 
 typedef long double lld;
 
@@ -28,6 +29,7 @@ class ASTBuilder
         void add_function(const std::string &funcName);
         void optimize_tree();
         
+        TokenAnalyzer m_tAnalyzer;
         ExpressionParser m_expParser;
         State m_state = WExpression;
         std::vector<std::string> m_func = {"sin", "cos", "tg"};
