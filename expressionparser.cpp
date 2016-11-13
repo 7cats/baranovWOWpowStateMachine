@@ -33,7 +33,7 @@ std::string ExpressionParser::read()
     } else if (m_expr[m_indx] == '+' || m_expr[m_indx] == '-'
         || m_expr[m_indx] == '*' || m_expr[m_indx] == '/'
         || m_expr[m_indx] == '(' || m_expr[m_indx] == ')' || m_expr[m_indx] == '^')
-      {
+    {
         return std::string(1, m_expr[m_indx++]);
     } else if (m_expr[m_indx] >= '0' && m_expr[m_indx] <= '9') {
         //read number with .
