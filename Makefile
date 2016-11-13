@@ -18,19 +18,19 @@ main.o:
 	$(CC) $(CPPFLAGS) main.cpp
 	
 astnode.o:
-	$(CC) $(CPPFLAGS) astnode.cpp astnode.hpp
+	$(CC) $(CPPFLAGS) astnode.cpp
 	
 astbuilder.o:
-	$(CC) $(CPPFLAGS) astbuilder.cpp astbuilder.hpp
+	$(CC) $(CPPFLAGS) astbuilder.cpp
 	
 expressionparser.o:
-	$(CC) $(CPPFLAGS) expressionparser.cpp expressionparser.hpp
+	$(CC) $(CPPFLAGS) expressionparser.cpp
 	
 mathexpression.o:
-	$(CC) $(CPPFLAGS) mathexpression.cpp mathexpression.hpp
+	$(CC) $(CPPFLAGS) mathexpression.cpp
 	
 tokenanalyzer.o:
-	$(CC) $(CPPFLAGS) tokenanalyzer.cpp tokenanalyzer.hpp
+	$(CC) $(CPPFLAGS) tokenanalyzer.cpp
 	
 clean:
 	rm -rf *.o *.hpp.gch mainStateMachine.out
