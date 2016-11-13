@@ -11,7 +11,15 @@ ASTBuilder::ASTBuilder(const std::string &expr)
 
 void ASTBuilder::build_tree(const std::string &expr) 
 {
-    
+    m_expParser << expr;
+    std::string lex;
+    m_expParser >> lex;
+    while (lex != EXPRPARSEREOF) {
+        TokenType ttype = m_tAnalyzer.get_token_type(lex);
+        /*
+            в зависимости от типа токена и состояния ДКА вызываем нужную функцию
+        */
+    }
 }
 
 void ASTBuilder::add_number(lld number) 

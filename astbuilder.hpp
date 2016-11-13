@@ -19,7 +19,7 @@ class ASTBuilder
         void build_tree(const std::string &expr);
         
     protected:
-        ASTNode *m_root;    
+        ASTNode *m_root;
         
     private:
         void add_number(lld number);
@@ -32,7 +32,6 @@ class ASTBuilder
         TokenAnalyzer m_tAnalyzer;
         ExpressionParser m_expParser;
         State m_state = WExpression;
-        std::vector<std::string> m_func = {"sin", "cos", "tg"};
         std::stack< std::pair< std::string, int> > m_operationsStack;
         std::stack<ASTNode*> m_operandsStack;
 };
