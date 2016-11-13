@@ -56,3 +56,8 @@ std::string ExpressionParser::read()
     }
     return ss.str();
 }
+
+int ExpressionParser::get_index() const
+{
+    return m_indx;
+}

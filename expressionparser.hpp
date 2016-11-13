@@ -11,7 +11,8 @@ class ExpressionParser
         
         ExpressionParser& operator>>(std::string &expr);
         void operator<<(const std::string &expr);
-    
+        int get_index() const;
+
     private:
         std::string read(); 
         std::string m_expr;
