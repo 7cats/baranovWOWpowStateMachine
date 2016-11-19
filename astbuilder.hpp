@@ -34,4 +34,11 @@ class ASTBuilder
         State m_state = WExpression;
         std::stack< std::pair< std::string, int > > m_operationsStack;
         std::stack<ASTNode*> m_operandsStack;
+        
+        std::vector< std::vector <void(ASTBuilder::*)(const std::string&, TokenType)> > m_sstateTable = {
+        //  TIoperation                    TIOperand                  TIbracket                 TIfunc                       TItrash
+/*WExpr*/   {&ASTBuilder::add_uoperation,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_uoperation, &ASTBuilder::error},            
+/*WOprt*/   {&ASTBuilder::add_boperation,  &ASTBuilder::error      ,  &ASTBuilder::error      , &ASTBuilder::error         , &ASTBuilder::error},
+/*WOptd*/   {&ASTBuilder::error         ,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_operand   , &ASTBuilder::error}
+        };
 };
