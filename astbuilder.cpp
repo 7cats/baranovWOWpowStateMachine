@@ -22,27 +22,27 @@ void ASTBuilder::build_tree(const std::string &expr)
     }
 }
 
-void ASTBuilder::add_number(lld number) 
+void ASTBuilder::add_operand(const std::string &operand, TokenType ttype)
 {
     
 }
 
-void ASTBuilder::add_var(const std::string &varName)
+void ASTBuilder::add_boperation(const std::string &bOper, TokenType ttype)
 {
     
 }
 
-void ASTBuilder::add_binary_operation(const std::string &bOper)
+void ASTBuilder::add_bracket(const std::string &bracket, TokenType ttype)
 {
     
 }
 
-void ASTBuilder::add_unary_operation(char uOper)
+void ASTBuilder::add_uoperation(const std::string &uOper, TokenType ttype)
 {
     
 }
 
-void ASTBuilder::add_function(const std::string &funcName)
+void ASTBuilder::error(const std::string &errorLex, TokenType ttype)
 {
     
 }

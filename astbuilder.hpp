@@ -22,11 +22,11 @@ class ASTBuilder
         ASTNode *m_root;
         
     private:
-        void add_number(lld number);
-        void add_var(const std::string &varName);
-        void add_binary_operation(const std::string &bOper);
-        void add_unary_operation(char uOper);
-        void add_function(const std::string &funcName);
+        void add_operand(const std::string &operand, TokenType ttype);
+        void add_boperation(const std::string &bOper, TokenType ttype);
+        void add_uoperation(const std::string &uOper, TokenType ttype);
+        void add_bracket(const std::string &bracket, TokenType ttype);
+        void error(const std::string &errorLex, TokenType ttype);
         void optimize_tree();
         
         TokenAnalyzer m_tAnalyzer;
