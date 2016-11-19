@@ -18,7 +18,7 @@ void ASTBuilder::build_tree(const std::string &expr)
         size_t stateTIdx = 0;
         TokenType ttype = m_tAnalyzer.get_token_type(lex, &stateTIdx);
     
-        (this->*(ASTBuilder().m_sstateTable[m_state][ttype]))(lex, ttype);
+        (this->*(ASTBuilder().m_stateTable[m_state][ttype]))(lex, ttype);
         m_expParser >> lex;
     }
     

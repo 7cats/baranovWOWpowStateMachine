@@ -41,7 +41,7 @@ class ASTBuilder
         std::stack< std::pair< std::string, int > > m_operationsStack;
         std::stack<ASTNode*> m_operandsStack;
         
-        std::vector< std::vector <void(ASTBuilder::*)(const std::string&, TokenType)> > m_sstateTable = {
+        std::vector< std::vector <void(ASTBuilder::*)(const std::string&, TokenType)> > m_stateTable = {
         //  TIoperation                    TIOperand                  TIbracket                 TIfunc                       TItrash
 /*WExpr*/   {&ASTBuilder::add_uoperation,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_uoperation, &ASTBuilder::error},            
 /*WOprt*/   {&ASTBuilder::add_boperation,  &ASTBuilder::error      ,  &ASTBuilder::error      , &ASTBuilder::error         , &ASTBuilder::error},
