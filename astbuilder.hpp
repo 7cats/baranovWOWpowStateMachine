@@ -2,6 +2,9 @@
 
 #include <string>
 #include <stack>
+#include <cassert>
+#include <climits>
+#include <iostream>
 
 #include "astnode.hpp"
 #include "expressionparser.hpp"
@@ -28,6 +31,9 @@ class ASTBuilder
         void add_bracket(const std::string &bracket, TokenType ttype);
         void error(const std::string &errorLex, TokenType ttype);
         void optimize_tree();
+        int priority(const std::string &oper);
+        void prepare_operat_stack(int currPrior = -1);
+        void exec_top_stack_op();
         
         TokenAnalyzer m_tAnalyzer;
         ExpressionParser m_expParser;
