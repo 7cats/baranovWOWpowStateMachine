@@ -32,6 +32,6 @@ class ASTBuilder
         TokenAnalyzer m_tAnalyzer;
         ExpressionParser m_expParser;
         State m_state = WExpression;
-        std::stack< std::pair< std::string, int> > m_operationsStack;
+        std::stack< std::pair< std::string, int > > m_operationsStack;
         std::stack<ASTNode*> m_operandsStack;
 };
