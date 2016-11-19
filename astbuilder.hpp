@@ -7,8 +7,6 @@
 #include "expressionparser.hpp"
 #include "tokenanalyzer.hpp"
 
-typedef long double lld;
-
 enum State {
     WExpression = 0, WOperation = 1, WOperand = 2
 };
