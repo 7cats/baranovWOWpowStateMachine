@@ -44,7 +44,7 @@ class ASTBuilder
         std::vector< std::vector <void(ASTBuilder::*)(const std::string&, TokenType)> > m_stateTable = {
         //  TIoperation                    TIOperand                  TIbracket                 TIfunc                       TItrash
 /*WExpr*/   {&ASTBuilder::add_uoperation,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_uoperation, &ASTBuilder::error},            
-/*WOprt*/   {&ASTBuilder::add_boperation,  &ASTBuilder::error      ,  &ASTBuilder::error      , &ASTBuilder::error         , &ASTBuilder::error},
-/*WOptd*/   {&ASTBuilder::error         ,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_operand   , &ASTBuilder::error}
+/*WOprt*/   {&ASTBuilder::add_boperation,  &ASTBuilder::error      ,  &ASTBuilder::add_bracket, &ASTBuilder::error         , &ASTBuilder::error},
+/*WOptd*/   {&ASTBuilder::error         ,  &ASTBuilder::add_operand,  &ASTBuilder::add_bracket, &ASTBuilder::add_uoperation, &ASTBuilder::error}
         };
 };
