@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 enum TokenType {
     TAoperation, TAnumber, TAvar, TAbracket, TAfunc, TAtrash

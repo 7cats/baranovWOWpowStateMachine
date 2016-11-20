@@ -8,6 +8,10 @@ TokenType TokenAnalyzer::get_token_type(const std::string &token,
         size_t indx = 0;
         std::stold(token, &indx);
         if (indx == token.size()) {
+            if (indx > 20) {
+                std::cout << "Input the number of very large, possible loss of "
+                    << "precision" << std::endl;
+            }
             if (stTableIdx != 0) { *stTableIdx = TIoperand; }
             return TAnumber;
         }
@@ -44,4 +48,5 @@ TokenType TokenAnalyzer::get_token_type(const std::string &token,
     
     if (stTableIdx != 0) { *stTableIdx = TItrash; }
     return TAtrash;
+}
 }
