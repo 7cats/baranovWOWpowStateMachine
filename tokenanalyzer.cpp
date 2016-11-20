@@ -49,4 +49,3 @@ TokenType TokenAnalyzer::get_token_type(const std::string &token,
     if (stTableIdx != 0) { *stTableIdx = TItrash; }
     return TAtrash;
 }
-}
