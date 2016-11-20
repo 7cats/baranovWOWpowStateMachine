@@ -14,6 +14,12 @@ TokenType TokenAnalyzer::get_token_type(const std::string &token,
     } catch (...) {
         //continue
     }
+    
+    if (token[0] == '(' || token[0] == ')') {
+        if (stTableIdx != 0) { *stTableIdx = TIbracket; }
+        return TAbracket;
+    }
+    
     //try compare with func names -> return func
     for (int i = 0; i < (int)m_funcs.size(); i++) {
         if (token == m_funcs[i]) {
@@ -34,11 +40,6 @@ TokenType TokenAnalyzer::get_token_type(const std::string &token,
     if (!std::isdigit(token[0])) {
         if (stTableIdx != 0) { *stTableIdx = TIoperand; }
         return TAvar;
-    }
-    
-    if (token[0] == '(' || token[1] == ')') {
-        if (stTableIdx != 0) { *stTableIdx = TIbracket; }
-        return TAbracket;
     }
     
     if (stTableIdx != 0) { *stTableIdx = TItrash; }
