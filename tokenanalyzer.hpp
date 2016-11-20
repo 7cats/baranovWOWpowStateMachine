@@ -5,7 +5,7 @@
 #include <iostream>
 
 enum TokenType {
-    TAoperation, TAnumber, TAvar, TAbracket, TAfunc, TAtrash
+    TAoperation = 0, TAnumber = 1, TAvar = 2, TAbracket = 3, TAfunc = 4, TAtrash = 5
 };
 
 enum TokenStateIdx {
