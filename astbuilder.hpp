@@ -20,9 +20,10 @@ class ASTBuilder
         ASTBuilder();
         ASTBuilder(const std::string &expr);
         void build_tree(const std::string &expr);
+        ASTNode *m_root;
         
     protected:
-        ASTNode *m_root;
+
         
     private:
         void add_operand(const std::string &operand, TokenType ttype);
@@ -34,7 +35,7 @@ class ASTBuilder
         int priority(const std::string &oper);
         void prepare_operat_stack(int currPrior = -1);
         void exec_top_stack_op();
-        
+
         TokenAnalyzer m_tAnalyzer;
         ExpressionParser m_expParser;
         State m_state = WExpression;
