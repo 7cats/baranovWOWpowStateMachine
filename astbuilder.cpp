@@ -76,13 +76,12 @@ void ASTBuilder::optimize_tree()
 
 int ASTBuilder::priority(const std::string &oper)
 {
-    if (oper[0] == ')')                   { return 0; }
+    if (oper[0] == '(' || oper[0] == ')') { return 0; }
     if (oper[0] == '+' || oper[0] == '-') { return 1; }
     if (oper[0] == '*' || oper[0] == '/') { return 2; }
     if (oper[0] == '^')                   { return 3; }
     //unary '-'
     if (oper[0] == -(int)'-')             { return 4; }
-    if (oper[0] == '(')                   { return INT_MAX; }
     
     assert(oper.size() > 1);
 #ifdef DEBUG
