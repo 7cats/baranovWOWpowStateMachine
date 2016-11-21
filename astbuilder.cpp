@@ -43,6 +43,11 @@ void ASTBuilder::build_tree(const std::string &expr)
     m_state = WExpression;
 }
 
+ASTNode* ASTBuilder::get_ast_root()
+{
+    return m_root;
+}
+
 void ASTBuilder::add_operand(const std::string &operand, TokenType ttype)
 {
     m_operandsStack.push(new ASTNode(operand));

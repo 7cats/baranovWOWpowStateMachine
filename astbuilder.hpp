@@ -20,10 +20,10 @@ class ASTBuilder
         ASTBuilder();
         ASTBuilder(const std::string &expr);
         void build_tree(const std::string &expr);
-        ASTNode *m_root;
+        ASTNode* get_ast_root();
         
     protected:
-
+        ASTNode *m_root;
         
     private:
         void add_operand(const std::string &operand, TokenType ttype);
