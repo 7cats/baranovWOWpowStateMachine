@@ -179,13 +179,8 @@ void ASTBuilder::prepare_operat_stack(int currPrior)
 
 void ASTBuilder::exec_top_stack_op()
 {
-    std::string op;
-    try {
-        op = m_operationsStack.top().first; m_operationsStack.pop();
-    } catch (...) {
-        std::cout << "Expected operations, but operations not found" << std::endl;
-        throw 1;
-    }
+    std::string op = m_operationsStack.top().first; m_operationsStack.pop();
+
     assert(op[0]  != ')');
    
     if (m_operandsStack.empty()) {
