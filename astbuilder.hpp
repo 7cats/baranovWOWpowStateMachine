@@ -20,7 +20,7 @@ class ASTBuilder
         ASTBuilder();
         ASTBuilder(const std::string &expr);
         void build_tree(const std::string &expr);
-        ASTNode* get_ast_root();
+        ASTNode* get_ast_root(); //for module testing
         
     protected:
         ASTNode *m_root;
