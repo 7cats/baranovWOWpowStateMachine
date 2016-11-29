@@ -18,6 +18,6 @@ class TokenAnalyzer
         TokenType get_token_type(const std::string &token, size_t * const stTableIdx = 0);
 
     private:
-        const char m_operations[5 + 1] = {'+', '-', '*', '/','^'};
+        const char m_operations[6 + 1] = {'+', '-', '*', '/','^', -'-'};
         std::vector<std::string> m_funcs = {"sin", "cos", "tg"};
 };
