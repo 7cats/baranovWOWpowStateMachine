@@ -1,5 +1,5 @@
 CC=g++
-CPPFLAGS=-c -Wall -std=c++11 -fmax-errors=4
+CPPFLAGS=-c -Wall -std=c++11 -fmax-errors=4 -fpermissive
 
 all: mainStateMachine
 
