@@ -2,40 +2,41 @@
 
 MathExpr::MathExpr()
 {
-    
 }
 
 MathExpr::MathExpr(const std::string &expr)
 {
-    
+    build_tree(expr);
 }
 
-lld MathExpr::evaluate() const 
+ld MathExpr::evaluate() const
 {
-    
+    //считаем значение в дереве и возвращаем результат
+    //TODO: продумать архитектуру реализации с переменными, и функциями,
+    //и переменными
 }
 
-lld MathExpr::operator[](std::string varName) const 
+ld MathExpr::operator[](const std::string &varName) const
 {
-    
+    auto ans = m_vars.find(varName);
+    if (ans != m_vars.end()) {
+        return ans->second;
+    } else {
+        std::cout << "Variable with name: " + varName + " not found" << std::endl;
+        throw 1;
+    }
 }
 
-lld& MathExpr::operator[](std::string varName)
+ld& MathExpr::operator[](const std::string &varName)
 {
-    
+    auto ans = m_vars.find(varName);
+    if (ans == m_vars.end()) {
+        m_vars[varName] = 0;
+    }
+    return m_vars.find(varName)->second;
 }
 
-void MathExpr::set_variable(std::string varName, lld varVal)
+void MathExpr::operator<<(const std::string &expr)
 {
-    
-}
-
-lld MathExpr::get_value(std::string varName) const
-{
-    
-}
-
-void MathExpr::operator<<(std::string expression)
-{
-    
+    build_tree(expr);
 }

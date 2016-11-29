@@ -2,9 +2,10 @@
 
 #include <map>
 
+#include <string>
 #include "astbuilder.hpp"
 
-typedef long double lld;
+typedef long double ld;
 
 class MathExpr : public ASTBuilder
 {
@@ -13,16 +14,12 @@ class MathExpr : public ASTBuilder
         MathExpr(const std::string &expr);
         //MathExpr(const MathExpr &mathExpr);
         
-        lld evaluate() const;
-        lld operator[](std::string varName) const;
-        lld& operator[](std::string varName);
-        void operator<<(std::string expr);
+        ld evaluate() const;
+        ld operator[](const std::string &varName) const;
+        ld& operator[](const std::string &varName);
+        void operator<<(const std::string &expr);
         //void dif(std::string var_name);
         
-        
     private:
-        void set_variable(std::string varName, lld varVal);
-        lld get_value(std::string varName) const;
-    
-        std::map<std::string, lld> m_vars;
+        std::map<std::string, ld> m_vars;
 };
