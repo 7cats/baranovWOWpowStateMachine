@@ -207,6 +207,7 @@ void ASTBuilder::exec_top_stack_op()
             throw 1;   
         }
         anode->m_children.push_back(m_operandsStack.top());
+        std::reverse(anode->m_children.begin(), anode->m_children.end());
         m_operandsStack.pop();
         #ifdef ASTDEBUG
             std::cout << "Added new child for " + op << std::endl;

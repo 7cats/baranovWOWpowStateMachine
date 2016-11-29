@@ -5,7 +5,7 @@
 #include <cassert>
 #include <climits>
 #include <iostream>
-
+#include <algorithm>
 #include "astnode.hpp"
 #include "expressionparser.hpp"
 #include "tokenanalyzer.hpp"
