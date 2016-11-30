@@ -87,12 +87,21 @@ ld MathExpr::eval(const ASTNode &astnode) const
     } else if (ttype == TAfunc) {
         //TODO: fix it
         assert(astnode.m_children.size() == 1);
-        if (token == "sin") {
-            return std::sin(eval(*astnode.m_children[0]) * M_PI / 180.0);
+
+        ld number = eval(*astnode.m_children[0]);
+        number = fmod(number, 360);
+        if (number > 270) {
+            number -= 360;
+        } else if (number > 90) {
+            number = 180 - number;
+        }
+
+        if (token == "sin") {            
+            return std::sin(number * M_PI / 180.0);
         } else if (token == "cos") {
-            return std::cos(eval(*astnode.m_children[0]) * M_PI / 180.0);
+            return std::cos(number * M_PI / 180.0);
         } else if (token == "tg") {
-            return std::tan(eval(*astnode.m_children[0]) * M_PI / 180.0);
+            return std::tan(number * M_PI / 180.0);
         } else {
             std::cerr << "Invalid func in 90" << std::endl;
             throw 1;
