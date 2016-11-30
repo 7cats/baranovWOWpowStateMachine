@@ -1,7 +1,5 @@
 #include "mathexpression.hpp"
 
-#define MEDEBUG
-
 MathExpr::MathExpr()
 {
 }
@@ -75,9 +73,6 @@ ld MathExpr::eval(const ASTNode &astnode) const
     } else if (ttype == TAnumber) {
         return std::stold(token);
     } else if (ttype == TAvar) {
-        #ifdef MEDEBUG
-            std::cout << "Var: " << token << std::endl; 
-        #endif
         auto sRes = m_vars.find(token);
         if (sRes == m_vars.end()) {
             std::cerr << "Invalid var in 77" << std::endl;
